@@ -1,6 +1,7 @@
 // ==================== IMPORTS ====================
 import '../css/normalize.css';
 import '../css/styles.css';
+import VanillaTilt from 'vanilla-tilt';
 import heroImage from '../imgs/personal_photo_hero.png';
 import personalPhoto from '../imgs/personal_photo_AI.png';
 
@@ -17,14 +18,15 @@ const translations = {
 
     hero_title: 'Hi there, I am Mohammed Al-Fidagh.',
     hero_subtitle:
-      'A multidisciplinary Digital Operations Coordinator, Web Developer, and preclinical medical student merging healthcare with high-performance digital design.',
+      'A Digital Operations Coordinator and Front-End Developer. I combine the analytical rigor of my medical background with practical execution to build high-performance web solutions, leverage AI, and streamline business operations.',
 
     skills_title: 'I am good at',
     skill_1:
       'Business Management, Office Work, Document Handling & Operations.',
-    skill_2: 'Web Development, HTML/CSS/JS, APIs & Tech Integrations.',
-    skill_3: 'Graphic Design, Branding, Canva/Figma & Social Media.',
-    skills_footer: 'And pretty much everything else.',
+    skill_2:
+      'Web Development, HTML/CSS/JS, APIs, Tech Integrations & Data Analysis.',
+    skill_3: 'Graphic Design, Branding, Canva/Figma & Social Media Management.',
+    skills_footer: 'And pretty much everything else!',
 
     cta_discover: 'Wanna discover my work?',
     btn_view_work: 'View Work',
@@ -32,10 +34,10 @@ const translations = {
     cta_contact_prompt: 'Interested in collaborating?',
     btn_contact_me: 'Contact Me',
 
-    work_title: 'I managed and coordinated two creative businesses',
+    work_title: 'I managed and coordinated multiple businesses',
     work_1_title: 'Silvas Digital',
     work_1_desc:
-      'Founded Silvas Digital. Engineered and maintained responsive, high-performance websites for real estate and retail clients using HTML, CSS, and JS. Designed SEO and branding strategies.',
+      'Founded Silvas Digital. Engineered responsive, high-performance web architectures for healthcare centers, personal brands, real estate, and retail clients using HTML, CSS, and JS. Executed comprehensive SEO and brand identity strategies.',
     work_2_title: 'Mowl Store',
     work_2_desc:
       'Founded Mowl Store. Orchestrated the launch of a medical-niche e-commerce venture. Managed international supply chains, Shopify integrations, and marketing strategies.',
@@ -43,20 +45,20 @@ const translations = {
     projects_title: 'Web dev and design skills',
     project_1_title: 'Weather App Project',
     project_2_title: 'Library App Project',
-    project_3_title: 'Tic-Tac-Toe Project',
+    project_3_title: 'Social Media Posts',
 
     download_text: 'Wanna see my full CV and Design Portfolio?',
     btn_download: 'Download Assets',
 
     about_title: 'About Me',
     about_desc:
-      'As a preclinical medical student maintaining a 3.8 GPA, I thrive at the intersection of medicine, technology, and design. Whether I am conducting award-winning medical research, building clean front-end architectures, or running digital operations, my focus is on structure, efficiency, and real-world results.',
+      'I am driven by an intense work ethic, sharp digital skills, and a demand for precise execution. My background in medicine has hardwired me for rigorous analysis and extreme discipline, but my daily arena is code, data, and digital strategy. Whether I am architecting robust front-end web solutions, deploying automated operations, or leveraging AI to solve complex bottlenecks, I build systems that perform. For me, it is never just about managing projects, it is about turning high-level strategy into flawless, real-world results.',
     metric_1: 'Projects',
     metric_2: 'Clients',
     metric_3: 'Experience',
 
     contact_title: 'Contact',
-    contact_phone: '+971 56 166 4529',
+    contact_phone: '+971 50 383 2005',
     contact_email: 'mohammedstum890@gmail.com',
     contact_whatsapp: 'WhatsApp',
 
@@ -134,6 +136,8 @@ function initializeApp() {
   setupHeroImage();
   setupPersonalPhoto();
   setupEventListeners();
+  setupScrollAnimations();
+  setupTiltEffects();
   applyAccessibilityFeatures();
 }
 
@@ -149,6 +153,66 @@ function setupPersonalPhoto() {
   if (aboutImg) {
     aboutImg.src = personalPhoto;
   }
+}
+
+function setupScrollAnimations() {
+  const progressBar = document.querySelector('.scroll-progress');
+  const revealTargets = [
+    '.hero-title',
+    '.hero-subtitle',
+    '.hero-image-wrapper',
+    '.about-image',
+    '.about-text',
+    '.section-title',
+    '.skill-card',
+    '.work-item',
+    '.project-card',
+    '.metric-box',
+    '.contact-item',
+    '.mid-cta',
+    '.download-cta',
+  ];
+
+  const elements = Array.from(
+    document.querySelectorAll(revealTargets.join(',')),
+  );
+
+  elements.forEach((element, index) => {
+    element.classList.add('scroll-reveal');
+    element.style.transitionDelay = `${Math.min(index * 50, 300)}ms`;
+  });
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: '0px 0px -120px 0px',
+    },
+  );
+
+  elements.forEach((element) => revealObserver.observe(element));
+
+  const updateProgress = () => {
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (progressBar) {
+      progressBar.style.width = `${Math.min(Math.max(progress, 0), 100)}%`;
+    }
+  };
+
+  window.addEventListener('scroll', () => {
+    window.requestAnimationFrame(updateProgress);
+  });
+  updateProgress();
 }
 
 // ==================== LANGUAGE TOGGLE ====================
@@ -170,6 +234,35 @@ function setLanguage(lang) {
 
   // Update all i18n elements
   updateAllTranslations(lang);
+  updateLanguageButton(lang);
+}
+
+function setupTiltEffects() {
+  const tiltItems = document.querySelectorAll(
+    '.skill-card, .project-card, .metric-box, .work-image',
+  );
+
+  if (tiltItems.length > 0) {
+    VanillaTilt.init(tiltItems, {
+      max: 18,
+      speed: 650,
+      glare: true,
+      'max-glare': 0.14,
+      scale: 1.025,
+      perspective: 1200,
+      transition: true,
+      easing: 'cubic-bezier(.03,.98,.52,.99)',
+    });
+  }
+}
+
+function updateLanguageButton(lang) {
+  const langToggle = document.getElementById('langToggle');
+  if (!langToggle) return;
+
+  const nextLanguage = lang === 'en' ? 'Arabic' : 'English';
+  langToggle.setAttribute('aria-label', `Switch to ${nextLanguage}`);
+  langToggle.setAttribute('title', `Switch to ${nextLanguage}`);
 }
 
 function updateAllTranslations(lang) {
