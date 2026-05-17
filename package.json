@@ -1,14 +1,14 @@
 {
-  "name": "pivot-portfolio",
+  "name": "Mohammed Al-Fidagh portfolio",
   "version": "1.0.0",
-  "description": "Premium Real Estate Portfolio - Pivot",
+  "description": "A portfolio website for Mohammed Al-Fidagh, showcasing his projects and skills in web development.",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "deploy": "npm run build && git subtree push --prefix dist origin deploy"
   },
-  "author": "Pivot Real Estate",
+  "author": "Mohammed Al-Fidagh",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.23",

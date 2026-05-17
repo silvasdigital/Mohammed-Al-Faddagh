@@ -30,7 +30,13 @@
     <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="navbar-container">
         <div class="navbar-logo">
-          <span class="logo-text" data-i18n="nav_logo">Mohammed Al-Fidagh</span>
+          <a
+            href="#home"
+            class="logo-link logo-text"
+            data-i18n="nav_logo"
+            aria-label="Go to Home"
+            >Mohammed Al-Fidagh</a
+          >
         </div>
 
         <button class="mobile-menu-btn" aria-label="Toggle navigation">
@@ -41,9 +47,6 @@
 
         <div class="navbar-menu">
           <ul class="nav-list">
-            <li>
-              <a href="#home" class="nav-link" data-i18n="nav_home">Home</a>
-            </li>
             <li>
               <a href="#work" class="nav-link" data-i18n="nav_work">Work</a>
             </li>
@@ -82,13 +85,13 @@
       <div class="hero-container">
         <div class="hero-content">
           <h1 id="hero-heading" class="hero-title" data-i18n="hero_title">
-            Hi there, I am Mohammed Al-Fidagh.
+            Hi, I am Mohammed Al-Fidagh.
           </h1>
           <p class="hero-subtitle" data-i18n="hero_subtitle">
-            A Digital Operations Coordinator and Front-End Developer. I combine
-            the analytical rigor of my medical background with practical
-            execution to build high-performance web solutions, leverage AI, and
-            streamline business operations.
+            I build websites, run paid media, design brands, automate workflows,
+            and coordinate operations, with 5+ years of hands-on execution
+            across every layer of the digital stack. Not a jack of all trades. A
+            specialist in all of them.
           </p>
         </div>
 
@@ -107,38 +110,33 @@
     >
       <div class="container">
         <h2 id="skills-heading" class="section-title" data-i18n="skills_title">
-          I am good at
+          What I bring to the table
         </h2>
 
         <div class="skills-grid">
-          <!-- Skill Card 1: Business Management -->
           <div class="skill-card">
-            <div class="skill-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
+            <div class="skill-icon"><i class="fas fa-briefcase"></i></div>
             <p class="skill-text" data-i18n="skill_1">
-              Business Management, Office Work, Document Handling & Operations.
+              Operations & Coordination, 5+ years managing business workflows,
+              documentation, cross-functional teams and end-to-end project
+              delivery with zero drop-offs.
             </p>
           </div>
-
-          <!-- Skill Card 2: Web Development -->
           <div class="skill-card">
-            <div class="skill-icon">
-              <i class="fas fa-code"></i>
-            </div>
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
             <p class="skill-text" data-i18n="skill_2">
-              Web Development, HTML/CSS/JS, APIs, Tech Integrations & Data
-              Analysis.
+              Development & AI, Front-end architecture in HTML, CSS and JS, API
+              integrations, workflow automation, and daily deployment of AI
+              tools including Claude, Copilot, and the full suite of generative
+              AI platforms.
             </p>
           </div>
-
-          <!-- Skill Card 3: Graphic Design -->
           <div class="skill-card">
-            <div class="skill-icon">
-              <i class="fas fa-palette"></i>
-            </div>
+            <div class="skill-icon"><i class="fas fa-bullhorn"></i></div>
             <p class="skill-text" data-i18n="skill_3">
-              Graphic Design, Branding, Canva/Figma & Social Media Management.
+              Marketing, Design & Media, Meta Ads, Google Ads, Shopify, Figma,
+              Adobe Suite, Canva, from paid campaign strategy to brand identity
+              and social content, built and executed in-house.
             </p>
           </div>
         </div>
@@ -155,7 +153,7 @@
         <div class="cta-group">
           <div class="cta-text-block">
             <p class="cta-text" data-i18n="cta_discover">
-              Wanna discover my work?
+              Wanna see what I have built?
             </p>
             <a href="#work" class="btn btn-primary" data-i18n="btn_view_work"
               >View Work</a
@@ -166,10 +164,10 @@
 
           <div class="cta-text-block">
             <p class="cta-text" data-i18n="cta_contact_prompt">
-              Interested in collaborating?
+              Need someone who can handle it all?
             </p>
             <a href="#contact" class="btn btn-ghost" data-i18n="btn_contact_me"
-              >Contact Me</a
+              >Let's Talk</a
             >
           </div>
         </div>
@@ -185,44 +183,79 @@
     >
       <div class="container">
         <h2 id="work-heading" class="section-title" data-i18n="work_title">
-          I managed and coordinated multiple businesses
+          Ventures I founded and ran end to end
         </h2>
 
         <!-- Work Item 1: Silvas Digital -->
         <div class="work-item">
           <div class="work-content">
             <h3 class="work-item-title" data-i18n="work_1_title">
-              Silvas Digital
+              <a
+                href="https://silvasdigital.github.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Silvas Digital</a
+              >
             </h3>
             <p class="work-description" data-i18n="work_1_desc">
-              Founded Silvas Digital. Engineered responsive, high-performance
-              web architectures for healthcare centers, personal brands, real
-              estate, and retail clients using HTML, CSS, and JS. Executed
-              comprehensive SEO and brand identity strategies.
+              Founded and operated Silvas Digital, a full-service digital agency
+              delivering across web development, SEO, branding, and digital
+              strategy. Served 20+ clients across healthcare, real estate,
+              personal brands, and retail. Handled every layer: code, design,
+              coordination, and client delivery.
             </p>
           </div>
-          <div class="work-image">
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
+          <a
+            href="https://silvasdigital.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-image-link"
+          >
+            <div class="work-image">
+              <img
+                src="./imgs/silvasdigital_work.png"
+                alt="Silvas Digital portfolio"
+                class="work-item-image"
+                loading="lazy"
+              />
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Work Item 2: Mowl Store -->
         <div class="work-item work-item-reverse">
           <div class="work-content">
-            <h3 class="work-item-title" data-i18n="work_2_title">Mowl Store</h3>
+            <h3 class="work-item-title" data-i18n="work_2_title">
+              <a
+                href="https://mowlstore.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Mowl Store</a
+              >
+            </h3>
             <p class="work-description" data-i18n="work_2_desc">
-              Founded Mowl Store. Orchestrated the launch of a medical-niche
-              e-commerce venture. Managed international supply chains, Shopify
-              integrations, and marketing strategies.
+              Founded Mowl Store, a medical-niche e-commerce brand built and
+              scaled from scratch. Managed international supply chains,
+              engineered the full Shopify stack, executed paid media campaigns
+              on Meta and Google, and handled all marketing strategy and
+              creative production in-house.
             </p>
           </div>
-          <div class="work-image">
-            <div class="image-placeholder">
-              <i class="fas fa-image"></i>
+          <a
+            href="https://mowlstore.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="work-image-link"
+          >
+            <div class="work-image">
+              <img
+                src="./imgs/mowlstore_work.png"
+                alt="Mowl Store e-commerce platform"
+                class="work-item-image"
+                loading="lazy"
+              />
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -240,44 +273,74 @@
           class="section-title"
           data-i18n="projects_title"
         >
-          Web dev and design skills
+          Things I have built and designed
         </h2>
 
         <div class="projects-grid">
-          <!-- Project 1: Weather App -->
+          <!-- Project 1: Medical Study Website -->
           <div class="project-card">
-            <div class="project-image">
-              <div class="image-placeholder">
-                <i class="fas fa-cloud-sun"></i>
+            <a
+              href="https://silva-mo.github.io/IgAN_Awareness/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <div class="project-image">
+                <img
+                  src="./imgs/medical_study_work.png"
+                  alt="Medical Study Website"
+                  loading="lazy"
+                  style="object-position: center center"
+                />
               </div>
-            </div>
-            <h3 class="project-title" data-i18n="project_1_title">
-              Weather App Project
-            </h3>
+              <h3 class="project-title" data-i18n="project_1_title">
+                Medical Study Website
+              </h3>
+            </a>
           </div>
 
-          <!-- Project 2: Library App -->
+          <!-- Project 2: Real Estate Website -->
           <div class="project-card">
-            <div class="project-image">
-              <div class="image-placeholder">
-                <i class="fas fa-book"></i>
+            <a
+              href="https://silvasdigital.github.io/real-estate-website/#/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <div class="project-image">
+                <img
+                  src="./imgs/real_estate_work.png"
+                  alt="Real Estate Website"
+                  loading="lazy"
+                  style="object-position: center center"
+                />
               </div>
-            </div>
-            <h3 class="project-title" data-i18n="project_2_title">
-              Library App Project
-            </h3>
+              <h3 class="project-title" data-i18n="project_2_title">
+                Real Estate Website
+              </h3>
+            </a>
           </div>
 
-          <!-- Project 3: Tic-Tac-Toe -->
+          <!-- Project 3: Social Media Posts -->
           <div class="project-card">
-            <div class="project-image">
-              <div class="image-placeholder">
-                <i class="fas fa-gamepad"></i>
+            <a
+              href="https://www.instagram.com/silvasdigitalco/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <div class="project-image">
+                <img
+                  src="./imgs/post_work.png"
+                  alt="Social Media Posts"
+                  loading="lazy"
+                  style="object-position: center center"
+                />
               </div>
-            </div>
-            <h3 class="project-title" data-i18n="project_3_title">
-              Social Media Posts
-            </h3>
+              <h3 class="project-title" data-i18n="project_3_title">
+                Social Media Posts
+              </h3>
+            </a>
           </div>
         </div>
       </div>
@@ -287,7 +350,7 @@
     <section class="download-cta" role="region">
       <div class="container">
         <p class="download-text" data-i18n="download_text">
-          Wanna see my full CV and Design Portfolio?
+          Want the full picture? CV and design portfolio available.
         </p>
         <button class="btn btn-primary btn-large" data-i18n="btn_download">
           Download Assets
@@ -313,14 +376,15 @@
           About Me
         </h2>
         <p class="about-text" data-i18n="about_desc">
-          I am driven by an intense work ethic, sharp digital skills, and a
-          demand for precise execution. My background in medicine has hardwired
-          me for rigorous analysis and extreme discipline, but my daily arena is
-          code, data, and digital strategy. Whether I am architecting robust
-          front-end web solutions, deploying automated operations, or leveraging
-          AI to solve complex bottlenecks, I build systems that perform. For me,
-          it is never just about managing projects, it is about turning
-          high-level strategy into flawless, real-world results.
+          Over 5 years of execution across web development, paid media, graphic
+          design, AI automation, business coordination, and social media, I do
+          not dabble. I go deep in every domain I operate in. I have built
+          websites from scratch, managed Meta and Google ad campaigns, designed
+          full brand identities in Figma, Canva and Adobe, automated business
+          operations using AI tools, and coordinated complex projects across
+          multiple industries. My background in medicine sharpened my precision
+          and analytical thinking. Everything else was built through real work,
+          real clients, and real results.
         </p>
 
         <div class="metrics-grid">
@@ -334,7 +398,9 @@
           </div>
           <div class="metric-box">
             <span class="metric-number">+5 years</span>
-            <span class="metric-label" data-i18n="metric_3">Experience</span>
+            <span class="metric-label" data-i18n="metric_3"
+              >Across Industries</span
+            >
           </div>
         </div>
       </div>

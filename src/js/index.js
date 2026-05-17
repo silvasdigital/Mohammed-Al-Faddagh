@@ -4,6 +4,11 @@ import '../css/styles.css';
 import VanillaTilt from 'vanilla-tilt';
 import heroImage from '../imgs/personal_photo_hero.png';
 import personalPhoto from '../imgs/personal_photo_AI.png';
+import silvasDigitalImage from '../imgs/silvasdigital_work.png';
+import mowlStoreImage from '../imgs/mowlstore_work.png';
+import medicalStudyImage from '../imgs/medical_study_work.png';
+import realEstateImage from '../imgs/real_estate_work.png';
+import socialMediaImage from '../imgs/post_work.png';
 
 // ==================== INTERNATIONALIZATION (i18n) ====================
 const translations = {
@@ -16,46 +21,47 @@ const translations = {
     nav_contact: 'Contact',
     lang_indicator: 'EN / AR',
 
-    hero_title: 'Hi there, I am Mohammed Al-Fidagh.',
+    hero_title: 'Hi, I am Mohammed Al-Fidagh.',
     hero_subtitle:
-      'A Digital Operations Coordinator and Front-End Developer. I combine the analytical rigor of my medical background with practical execution to build high-performance web solutions, leverage AI, and streamline business operations.',
+      'I build websites, run paid media, design brands, automate workflows, and coordinate operations, with 5+ years of hands-on execution across every layer of the digital stack. Not a jack of all trades. A specialist in all of them.',
 
-    skills_title: 'I am good at',
+    skills_title: 'What I bring to the table',
     skill_1:
-      'Business Management, Office Work, Document Handling & Operations.',
+      'Operations & Coordination, 5+ years managing business workflows, documentation, cross functional teams and end to end project delivery with zero drop-offs.',
     skill_2:
-      'Web Development, HTML/CSS/JS, APIs, Tech Integrations & Data Analysis.',
-    skill_3: 'Graphic Design, Branding, Canva/Figma & Social Media Management.',
+      'Development & AI, Front end architecture in HTML, CSS and JS, API integrations, workflow automation, and daily deployment of AI tools including Claude, Copilot, and the full suite of generative AI platforms.',
+    skill_3:
+      'Marketing, Design & Media, Meta Ads, Google Ads, Shopify, Figma, Adobe Suite, Canva, from paid campaign strategy to brand identity and social content, built and executed in-house.',
     skills_footer: 'And pretty much everything else!',
 
-    cta_discover: 'Wanna discover my work?',
+    cta_discover: 'Wanna see what I have built?',
     btn_view_work: 'View Work',
     cta_or: 'Or',
-    cta_contact_prompt: 'Interested in collaborating?',
-    btn_contact_me: 'Contact Me',
+    cta_contact_prompt: 'Need someone who can handle it all?',
+    btn_contact_me: "Let's Talk",
 
-    work_title: 'I managed and coordinated multiple businesses',
+    work_title: 'Ventures I founded and ran end to end',
     work_1_title: 'Silvas Digital',
     work_1_desc:
-      'Founded Silvas Digital. Engineered responsive, high-performance web architectures for healthcare centers, personal brands, real estate, and retail clients using HTML, CSS, and JS. Executed comprehensive SEO and brand identity strategies.',
+      'Founded and operated Silvas Digital, a full-service digital agency delivering across web development, SEO, branding, and digital strategy. Served 20+ clients across healthcare, real estate, personal brands, and retail. Handled every layer: code, design, coordination, and client delivery.',
     work_2_title: 'Mowl Store',
     work_2_desc:
-      'Founded Mowl Store. Orchestrated the launch of a medical-niche e-commerce venture. Managed international supply chains, Shopify integrations, and marketing strategies.',
+      'Founded Mowl Store, a medical-niche e-commerce brand built and scaled from scratch. Managed international supply chains, engineered the full Shopify stack, executed paid media campaigns on Meta and Google, and handled all marketing strategy and creative production in-house.',
 
-    projects_title: 'Web dev and design skills',
-    project_1_title: 'Weather App Project',
-    project_2_title: 'Library App Project',
+    projects_title: 'Things I have built and designed',
+    project_1_title: 'Medical Study Website',
+    project_2_title: 'Real Estate Website',
     project_3_title: 'Social Media Posts',
 
-    download_text: 'Wanna see my full CV and Design Portfolio?',
+    download_text: 'Want the full picture? CV and design portfolio available.',
     btn_download: 'Download Assets',
 
     about_title: 'About Me',
     about_desc:
-      'I am driven by an intense work ethic, sharp digital skills, and a demand for precise execution. My background in medicine has hardwired me for rigorous analysis and extreme discipline, but my daily arena is code, data, and digital strategy. Whether I am architecting robust front-end web solutions, deploying automated operations, or leveraging AI to solve complex bottlenecks, I build systems that perform. For me, it is never just about managing projects, it is about turning high-level strategy into flawless, real-world results.',
+      'Over 5 years of execution across web development, paid media, graphic design, AI automation, business coordination, and social media, I do not dabble. I go deep in every domain I operate in. I have built websites from scratch, managed Meta and Google ad campaigns, designed full brand identities in Figma and Adobe, automated business operations using AI tools, and coordinated complex projects across multiple industries. My background in medicine sharpened my precision and analytical thinking. Everything else was built through real work, real clients, and real results.',
     metric_1: 'Projects',
     metric_2: 'Clients',
-    metric_3: 'Experience',
+    metric_3: 'Across Industries',
 
     contact_title: 'Contact',
     contact_phone: '+971 50 383 2005',
@@ -65,7 +71,7 @@ const translations = {
     footer_text: 'Designed and Built by Mohammed Al-Fidagh. © 2026.',
   },
   ar: {
-    page_title: 'محمد الفداغ | محفظة أعمالي',
+    page_title: 'محمد الفداغ | سيرة ذاتية',
     nav_logo: 'محمد الفداغ',
     nav_home: 'الرئيسية',
     nav_work: 'أعمالي',
@@ -73,49 +79,50 @@ const translations = {
     nav_contact: 'التواصل',
     lang_indicator: 'EN / AR',
 
-    hero_title: 'مرحبا، أنا محمد الفداغ.',
+    hero_title: 'يا هلا! أنا محمد الفداغ.',
     hero_subtitle:
-      'منسق عمليات رقمية متعدد المجالات ومطور ويب وطالب طب ما قبل سريري، أجمع بين الرعاية الصحية والتصميم الرقمي عالي الأداء.',
+      'أنا مطور مواقع إلكترونية، أدير الإعلانات المدفوعة، وأصمم العلامات التجارية، وأؤتمت سير العمل، وأنسق العمليات، بخبرة تتجاوز 5 سنوات من التنفيذ الفعلي عبر كل طبقات المنظومة الرقمية. باختصار، أنا متخصص في جميع المجالات التقنية والإدارية والتنسيقية.',
 
-    skills_title: 'أنا ماهر في',
-    skill_1: 'إدارة الأعمال والعمل المكتبي ومعالجة المستندات والعمليات.',
+    skills_title: 'ما أقدمه على الطاولة',
+    skill_1:
+      'تنسيق العمليات الإدارية، أكثر من 5 سنوات في إدارة سير العمل. عملت في تسليم المشاريع من الألف إلى الياء دون أي ثغرات.',
     skill_2:
-      'تطوير الويب و HTML/CSS/JS وواجهات برمجية التطبيقات والتكامل التقني.',
+      'التطوير واحتراف الذكاء الاصطناعي، بناء واجهات أمامية بـ HTML وCSS وJS، تكاملات API، أتمتة سير العمل، والاستخدام اليومي لأدوات الذكاء الاصطناعي كـ Claude وCopilot وكامل منصات الذكاء الاصطناعي التوليدي.',
     skill_3:
-      'التصميم الجرافيكي والعلامات التجارية و Canva/Figma ووسائل التواصل الاجتماعي.',
-    skills_footer: 'وكل شيء آخر تقريباً.',
+      'التسويق والتصميم والإعلام، Meta Ads وGoogle Ads وShopify وFigma وAdobe Suite وCanva، من استراتيجية الحملات المدفوعة إلى الهوية البصرية والمحتوى ، كل ما تحتاجه المشاريع للنمو  .',
+    skills_footer: 'وكل شيء آخر تقريباً!',
 
-    cta_discover: 'هل تريد اكتشاف أعمالي؟',
+    cta_discover: 'تريد ترى عملي؟',
     btn_view_work: 'عرض الأعمال',
     cta_or: 'أو',
-    cta_contact_prompt: 'مهتم بالتعاون؟',
-    btn_contact_me: 'تواصل معي',
+    cta_contact_prompt: 'تريد نتعاون؟',
+    btn_contact_me: 'فلنتحدث',
 
-    work_title: 'أدرت وتنسيق نشاطي تجاريين إبداعيين',
-    work_1_title: 'سيلفاس ديجيتال',
+    work_title: 'مشاريع أسستها وأدرتها من الألف إلى الياء',
+    work_1_title: 'Silvas Digital',
     work_1_desc:
-      'أسست سيلفاس ديجيتال. صممت وطورت مواقع ويب سريعة واستجابة للعملاء في العقارات والتجزئة باستخدام HTML و CSS و JS. صممت استراتيجيات تحسين محركات البحث والعلامات التجارية.',
-    work_2_title: 'متجر مول',
+      'أسست وأدرت Silvas Digital، وكالة رقمية متكاملة تقدم خدمات تطوير الويب وتحسين محركات البحث والعلامات التجارية والاستراتيجية الرقمية. خدمت أكثر من 20 عميلاً في قطاعات الرعاية الصحية والعقارات والعلامات الشخصية والتجزئة. تولّيت كل شيء من: البرمجة، التصميم، التنسيق، وتسليم العمل.',
+    work_2_title: 'Mowl Store',
     work_2_desc:
-      'أسست متجر مول. نسقت إطلاق مشروع تجارة إلكترونية متخصص في المجال الطبي. أدرت سلاسل التوريد الدولية وتكاملات Shopify واستراتيجيات التسويق.',
+      'أسست Mowl Store، علامة تجارية للتجارة الإلكترونية في المجال الطبي، بُنيت وطُوِّرت من الصفر. أدرت سلاسل التوريد الدولية، ونسقت وطورت الحل الكامل على Shopify، ونفذت حملات إعلانية مدفوعة على Meta وGoogle، وتوليت كل الاستراتيجيات التسويقية والإنتاج الإبداعي داخلياً.',
 
-    projects_title: 'مهارات تطوير الويب والتصميم',
-    project_1_title: 'مشروع تطبيق الطقس',
-    project_2_title: 'مشروع تطبيق المكتبة',
-    project_3_title: 'مشروع لعبة Tic-Tac-Toe',
+    projects_title: 'أشياء بنيتها وصممتها',
+    project_1_title: 'موقع لدراسة طبية',
+    project_2_title: 'موقع لشركة عقارات',
+    project_3_title: 'منشورات للسوشال ميديا',
 
-    download_text: 'هل تريد مشاهدة سيرتي الذاتية وملفات التصميم الخاصة بي؟',
+    download_text: 'تريد معلومات أكثر؟ السيرة الذاتية وغيرها؟',
     btn_download: 'تحميل الملفات',
 
-    about_title: 'حول',
+    about_title: 'من أنا؟',
     about_desc:
-      'كطالب طب ما قبل سريري يحافظ على معدل 3.8 GPA، أزدهر عند تقاطع الطب والتكنولوجيا والتصميم. سواء أجري أبحاث طبية حائزة على جوائز أو أبني هندسات أمامية نظيفة أو أدير العمليات الرقمية، فإن تركيزي على البنية والكفاءة والنتائج الواقعية.',
-    metric_1: 'المشاريع',
-    metric_2: 'العملاء',
-    metric_3: 'الخبرة',
+      'لدي اكثر من 5 سنوات خبرة في التنفيذ الفعلي في تطوير الويب، الإعلانات المدفوعة، التصميم الجرافيكي، أتمتة الذكاء الاصطناعي، تنسيق الأعمال، ووسائل التواصل الاجتماعي، لا أتعامل مع أي مجال بشكل سطحي، بل أغوص فيه بعمق. بنيت مواقع من الصفر، أدرت حملات إعلانية على Meta و Google， صممت هويات بصرية متكاملة في Figma و Canva و Adobe， أتمتت عمليات المشاريع باستخدام أدوات الذكاء الاصطناعي، ونسقت مشاريع معقدة عبر أدوات تقنية متعددة. خلفيتي الطبية صقلت دقتي وتفكيري التحليلي. جميع مشاريعي بُنيَت من خلال عمل حقيقي من القلب، عملاء حقيقيين، ونتائج ملموسة.',
+    metric_1: 'عدد المشاريع',
+    metric_2: 'عدد العملاء',
+    metric_3: 'خبرة عبر صناعات متعددة',
 
     contact_title: 'التواصل',
-    contact_phone: '+971 56 166 4529',
+    contact_phone: '971503832005+',
     contact_email: 'mohammedstum890@gmail.com',
     contact_whatsapp: 'واتس أب',
 
@@ -135,6 +142,8 @@ function initializeApp() {
   setLanguage(currentLanguage);
   setupHeroImage();
   setupPersonalPhoto();
+  setupWorkImages();
+  setupProjectImages();
   setupEventListeners();
   setupScrollAnimations();
   setupTiltEffects();
@@ -152,6 +161,23 @@ function setupPersonalPhoto() {
   const aboutImg = document.querySelector('.about-image img');
   if (aboutImg) {
     aboutImg.src = personalPhoto;
+  }
+}
+
+function setupWorkImages() {
+  const workImages = document.querySelectorAll('.work-item-image');
+  if (workImages.length >= 2) {
+    workImages[0].src = silvasDigitalImage;
+    workImages[1].src = mowlStoreImage;
+  }
+}
+
+function setupProjectImages() {
+  const projectImages = document.querySelectorAll('.project-image img');
+  if (projectImages.length >= 3) {
+    projectImages[0].src = medicalStudyImage;
+    projectImages[1].src = realEstateImage;
+    projectImages[2].src = socialMediaImage;
   }
 }
 

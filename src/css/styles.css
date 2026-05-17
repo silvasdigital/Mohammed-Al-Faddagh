@@ -599,12 +599,31 @@ a {
 }
 
 .work-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 350px;
+  /* Lock the container to a stable 16:9 aspect ratio — no more jumping height */
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition:
+    box-shadow var(--transition-standard),
+    transform var(--transition-standard);
   will-change: transform;
-  transform-style: preserve-3d;
+}
+
+.work-image-link {
+  display: block;
+}
+
+.work-item-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-item-title a:hover {
+  color: var(--accent);
 }
 
 .image-placeholder {
@@ -635,6 +654,52 @@ a {
   color: var(--accent);
 }
 
+.work-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: var(--border-radius);
+  transition:
+    transform var(--transition-standard),
+    filter var(--transition-standard);
+  image-rendering: auto;
+  /* Slightly pull back brightness and saturation so it sits naturally in the dark theme */
+  filter: brightness(0.88) saturate(0.85);
+}
+
+.work-item:hover .work-item-image {
+  filter: brightness(0.95) saturate(1);
+}
+
+/* Gradient fade at the bottom — ties the image into the dark background */
+.work-image {
+  position: relative;
+}
+
+.work-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(10, 15, 30, 0.5) 100%
+  );
+  border-radius: var(--border-radius);
+  pointer-events: none;
+}
+
+.work-item:hover .work-image {
+  box-shadow: 0 14px 48px rgba(59, 130, 246, 0.25);
+  transform: translateY(-4px);
+}
+
+.work-item:hover .work-item-image {
+  filter: brightness(0.95) saturate(1);
+}
+
 /* ==================== PROJECTS SECTION ==================== */
 .projects {
   padding: var(--spacing-2xl) 0;
@@ -662,6 +727,11 @@ a {
   transform-style: preserve-3d;
 }
 
+.work-link,
+.project-link {
+  display: block;
+}
+
 .project-card:hover {
   transform: translateY(-10px);
   border-color: var(--accent);
@@ -670,7 +740,7 @@ a {
 
 .project-image {
   width: 100%;
-  height: 280px;
+  aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -683,16 +753,29 @@ a {
   position: relative;
 }
 
+/* Gradient overlay — same as work images */
+.project-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(10, 15, 30, 0.5) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Blue shimmer on hover (kept for cards, sits above the gradient) */
 .project-image::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.2));
   opacity: 0;
   transition: opacity var(--transition-standard);
+  z-index: 2;
 }
 
 .project-card:hover .project-image::before {
@@ -700,8 +783,23 @@ a {
 }
 
 .project-card:hover .image-placeholder {
-  transform: scale(1.1);
   color: var(--accent);
+}
+
+/* Actual project images when added */
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  image-rendering: auto;
+  filter: brightness(0.88) saturate(0.85);
+  transition: filter var(--transition-standard);
+}
+
+.project-card:hover .project-image img {
+  filter: brightness(0.95) saturate(1);
 }
 
 .project-image .image-placeholder {
@@ -799,6 +897,11 @@ a {
   max-width: 900px;
   margin: var(--spacing-xl) auto;
   text-align: center;
+}
+
+.about .section-title {
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 .metrics-grid {
@@ -1042,7 +1145,8 @@ a {
   }
 
   .work-image {
-    height: 250px;
+    aspect-ratio: 16 / 9;
+    height: auto;
   }
 
   .work-item-title {
@@ -1058,7 +1162,8 @@ a {
   }
 
   .project-image {
-    height: 220px;
+    aspect-ratio: 4 / 3;
+    height: auto;
   }
 
   .download-cta {
@@ -1075,8 +1180,10 @@ a {
   }
 
   .about-image {
-    height: 300px;
-    margin-bottom: 40px;
+    width: min(300px, 100%);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    margin: 0 auto 40px;
   }
 
   .image-placeholder-large {
@@ -1333,7 +1440,8 @@ a {
   }
 
   .work-image {
-    height: 200px;
+    aspect-ratio: 16 / 9;
+    height: auto;
   }
 
   .projects-grid {
@@ -1341,7 +1449,8 @@ a {
   }
 
   .project-image {
-    height: 180px;
+    aspect-ratio: 4 / 3;
+    height: auto;
   }
 
   .project-image .image-placeholder {
@@ -1358,7 +1467,10 @@ a {
   }
 
   .about-image {
-    height: 250px;
+    width: min(250px, 100%);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    margin: 0 auto;
   }
 
   .image-placeholder-large {
